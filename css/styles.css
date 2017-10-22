@@ -13,3 +13,7 @@
 .listBorder{
   border: 1px solid red;
 }
+
+.markItemDone {
+  text-decoration: line-through;
+}

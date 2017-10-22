@@ -17,23 +17,28 @@ function createListItem(){
   var makeListDiv = document.createElement('div');
   makeListDiv.classList.add('row', 'listBorder');
   listItemHolder.appendChild(makeListDiv);
+  var checkboxDiv = document.createElement('div');
   function createCheckBoxDiv(){
-    var checkboxDiv = document.createElement('div');
     checkboxDiv.classList.add('col-sm-4');
     var makeCheckbox = document.createElement('input');
     makeCheckbox.type = 'checkbox';
     checkboxDiv.appendChild(makeCheckbox);
     makeListDiv.appendChild(checkboxDiv);
-  }
+
+    function crossTextOut(){
+      itemDiv.classList.toggle('markItemDone');
+    };
+    makeCheckbox.addEventListener('click', crossTextOut);
+  };
   createCheckBoxDiv();
+  var itemDiv = document.createElement('div');
   function createItemDiv(){
-    var itemDiv = document.createElement('div');
+
     itemDiv.classList.add('col-sm-4');
     var inputValue = document.getElementById('inputBox').value;
     var textValue = document.createTextNode(inputValue);
     itemDiv.appendChild(textValue);
     makeListDiv.appendChild(itemDiv);
-    //itemDiv.addEventListener('click', testFunc);
   };
   createItemDiv();
   function createDelDiv(){
@@ -43,6 +48,11 @@ function createListItem(){
     delButton.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';
     delDiv.appendChild(delButton);
     makeListDiv.appendChild(delDiv);
+    delButton.addEventListener('click', deleteFunc);
+    var deleteItemDiv = makeListDiv;
+    function deleteFunc(){
+      deleteItemDiv.parentNode.removeChild(makeListDiv);
+    };
   };
   createDelDiv();
 };

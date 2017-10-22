@@ -3,7 +3,7 @@ var name = prompt('What is your name?', 'default name');
 function listTitle(){
   let grabList = document.getElementById('nameTitle');
   let addHead = document.createElement('h2');
-  addHead.textContent = name+'\'s Bucketlist';
+  addHead.textContent = name+'\'s To Do List';
   grabList.appendChild(addHead);
 };
 listTitle();
@@ -24,7 +24,6 @@ function createListItem(){
     makeCheckbox.type = 'checkbox';
     checkboxDiv.appendChild(makeCheckbox);
     makeListDiv.appendChild(checkboxDiv);
-
     function crossTextOut(){
       itemDiv.classList.toggle('markItemDone');
     };
@@ -33,12 +32,18 @@ function createListItem(){
   createCheckBoxDiv();
   var itemDiv = document.createElement('div');
   function createItemDiv(){
-
     itemDiv.classList.add('col-sm-4');
-    var inputValue = document.getElementById('inputBox').value;
+    var userInput = document.getElementById('inputBox');
+    var inputValue = userInput.value;
     var textValue = document.createTextNode(inputValue);
     itemDiv.appendChild(textValue);
     makeListDiv.appendChild(itemDiv);
+    function editItem(){
+      console.log('edit text fired');
+      var backToInput = inputValue.toString();
+      userInput.value = backToInput;
+    };
+    itemDiv.addEventListener('click', editItem);
   };
   createItemDiv();
   function createDelDiv(){

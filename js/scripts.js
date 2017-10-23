@@ -3,7 +3,7 @@ var name = prompt('What is your name?', 'default name');
 function listTitle(){
   let grabList = document.getElementById('nameTitle');
   let addHead = document.createElement('h2');
-  addHead.textContent = name+'\'s To Do List';
+  addHead.textContent = name+'\'s List';
   grabList.appendChild(addHead);
 };
 listTitle();
@@ -31,18 +31,30 @@ function createListItem(){
   };
   createCheckBoxDiv();
   var itemDiv = document.createElement('div');
+  var userInput = document.getElementById('inputBox');
   function createItemDiv(){
     itemDiv.classList.add('col-sm-4');
-    var userInput = document.getElementById('inputBox');
     var inputValue = userInput.value;
     var textValue = document.createTextNode(inputValue);
     itemDiv.appendChild(textValue);
     makeListDiv.appendChild(itemDiv);
     function editItem(){
-      console.log('edit text fired');
-      var backToInput = inputValue.toString();
-      userInput.value = backToInput;
+      var editedItem = prompt("Editing list item: "+inputValue, inputValue);
+      itemDiv.removeChild(textValue);
+      function appendEdit(){
+        textValue = document.createTextNode(editedItem);
+        itemDiv.appendChild(textValue);
+      };
+      appendEdit();
     };
+    function hoverOver(){
+      itemDiv.classList.add('hover-class');
+    };
+    function hoverOut(){
+      itemDiv.classList.remove('hover-class');
+    };
+    itemDiv.addEventListener('mouseout', hoverOut)
+    itemDiv.addEventListener('mouseover', hoverOver);
     itemDiv.addEventListener('click', editItem);
   };
   createItemDiv();
@@ -60,8 +72,12 @@ function createListItem(){
     };
   };
   createDelDiv();
+  userInput.value = "";
 };
 var grabSubmit = document.getElementById('submitButton');
 grabSubmit.addEventListener('click',createListItem);
 
 //End Submit Button
+
+
+//Things left to do: Make it look nice/clean up CSS, add themes Dropdown, add Counters for lists and items created;

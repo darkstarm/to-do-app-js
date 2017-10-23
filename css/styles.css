@@ -1,5 +1,5 @@
 .inputHalf{
-  border: 1px solid black;
+  
 }
 
 .outputHalf {
@@ -16,4 +16,18 @@
 
 .markItemDone {
   text-decoration: line-through;
+}
+
+.hover-class{
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.input-center{
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 15px;
 }

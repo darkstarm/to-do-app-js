@@ -76,8 +76,15 @@ function createListItem(){
 };
 var grabSubmit = document.getElementById('submitButton');
 grabSubmit.addEventListener('click',createListItem);
-
 //End Submit Button
-
+userInput.addEventListener('keydown', enterKeySubmit);
+function enterKeySubmit(enterKey){
+  if(enterKey.keyCode === 13){
+    if(userInput.value === ""){
+      enterKey.preventDefault();
+    } else {
+      createListItem();
+    };
+  };
 
 //Things left to do: Make it look nice/clean up CSS, add themes Dropdown, add Counters for lists and items created;

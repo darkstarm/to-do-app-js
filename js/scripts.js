@@ -11,7 +11,7 @@ listTitle();
 
 
 //Start Submit button
-
+var userInput = document.getElementById('inputBox');
 var listItemHolder = document.getElementById('listItemHolder');
 function createListItem(){
   var makeListDiv = document.createElement('div');
@@ -76,7 +76,6 @@ function createListItem(){
 };
 var grabSubmit = document.getElementById('submitButton');
 grabSubmit.addEventListener('click',createListItem);
-//End Submit Button
 userInput.addEventListener('keydown', enterKeySubmit);
 function enterKeySubmit(enterKey){
   if(enterKey.keyCode === 13){
@@ -86,5 +85,8 @@ function enterKeySubmit(enterKey){
       createListItem();
     };
   };
+};
 
-//Things left to do: Make it look nice/clean up CSS, add themes Dropdown, add Counters for lists and items created;
+//End Submit Button
+
+//Things left to do: Make it look nice/clean up CSS, add themes Dropdown, add Counters for lists and items created, add Enter key function to input, change mouse cursor on hover edit;

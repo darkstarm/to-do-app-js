@@ -74,9 +74,9 @@ function createListItem(){
   createDelDiv();
   userInput.value = "";
 };
-userInput.addEventListener('keydown', enterKeySubmit);
 var grabSubmit = document.getElementById('submitButton');
 grabSubmit.addEventListener('click',createListItem);
+userInput.addEventListener('keydown', enterKeySubmit);
 function enterKeySubmit(enterKey){
   if(enterKey.keyCode === 13){
     if(userInput.value === ""){

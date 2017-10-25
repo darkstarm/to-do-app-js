@@ -110,9 +110,6 @@ var getBody = document.getElementById('bodyTag').classList;
 function changeDefault(){
   if(getBody.contains('halloween-theme', 'usa-theme', 'money-theme')){
     getBody.remove('halloween-theme', 'usa-theme', 'money-theme');
-    getBody.add('default-theme');
-  } else {
-    getBody.add('default-theme');
   };
 };
 function changeHalloween(){
@@ -165,6 +162,42 @@ function exitMoney(){
   moneyTheme.classList.remove('hover-theme');
 };
 //End Themes function
+// Query Api function Start
+var url = 'https://randomuser.me/api/?results=4'
+var apiDiv = document.getElementById('apiDiv');
+var userPhotoArray = [];
+var userNameArray = [];
+function grabApiInfo(){
+  fetch(url)
+    .then(function(resp){
+      return resp.json()
+    })
+    .then(function(data){
+      console.log(data);
+      var userInfo = data.results;
+      for(i = 0; i < 4; i++){
+        var apiHolder = document.createElement('div');
+        apiHolder.classList.add('col-sm-2', 'api-holder');
+        var userName = userInfo[i].login.username;
+        var userNameText = document.createElement('p');
+        userNameArray.push(userName);
+        userNameText.textContent = userName;
+        apiHolder.appendChild(userNameText);
+        var apiImg = document.createElement('img')
+        var userPhoto = userInfo[i].picture.medium;
+        userPhoto.toString();
+        userPhotoArray.push(userPhoto);
+        apiImg.src = userPhotoArray[i];
+        apiImg.classList.add('api-img');
+        apiHolder.appendChild(apiImg);
+        apiDiv.appendChild(apiHolder);
+      };
+    })
+    .catch(function(err){
+      console.log(err);
+    });
+};
+grabApiInfo();
 
-
-//Things left to do: Make it look nice/clean up CSS, add Counters for lists and items created, add api, fix null on cancel edit
+// query api function end
+//Things left to do: Make it look nice/clean up CSS,fix null on cancel edit

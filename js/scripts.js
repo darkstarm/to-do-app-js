@@ -165,8 +165,32 @@ function exitMoney(){
   moneyTheme.classList.remove('hover-theme');
 };
 //End Themes function
+// Query Api function Start
+var url = 'https://randomuser.me/api/?results=5'
+var apiDiv = document.getElementById('apiDiv');
+var apiImg = document.createElement('img')
+var userArray = [];
+function grabApiInfo(){
+  fetch(url)
+    .then(function(resp){
+      return resp.json()
+    })
+    .then(function(data){
+      var userInfo = data.results;
+      for(i = 0; i < 5; i++){
+        var userPhoto = userInfo[i].picture.medium;
+        userPhoto.toString();
+        userArray.push(userPhoto);
+        apiImg.src = userArray[i];
+        apiDiv.appendChild(apiImg);
+      };
+    })
+    .catch(function(err){
+      console.log(err);
+    });
+};
+grabApiInfo();
+console.log(userArray);
 
-
-
-
-//Things left to do: Make it look nice/clean up CSS, add Counters for lists and items created, add api, fix null on cancel edit
+// query api function end
+//Things left to do: Make it look nice/clean up CSS, add api, fix null on cancel edit

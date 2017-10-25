@@ -168,7 +168,6 @@ function exitMoney(){
 // Query Api function Start
 var url = 'https://randomuser.me/api/?results=5'
 var apiDiv = document.getElementById('apiDiv');
-var apiImg = document.createElement('img')
 var userArray = [];
 function grabApiInfo(){
   fetch(url)
@@ -178,11 +177,16 @@ function grabApiInfo(){
     .then(function(data){
       var userInfo = data.results;
       for(i = 0; i < 5; i++){
+        var apiImg = document.createElement('img')
+        var apiHolder = document.createElement('div');
         var userPhoto = userInfo[i].picture.medium;
         userPhoto.toString();
         userArray.push(userPhoto);
         apiImg.src = userArray[i];
-        apiDiv.appendChild(apiImg);
+        apiHolder.classList.add('col-sm-2', 'api-holder');
+        apiImg.classList.add('api-img');
+        apiHolder.appendChild(apiImg);
+        apiDiv.appendChild(apiHolder);
       };
     })
     .catch(function(err){

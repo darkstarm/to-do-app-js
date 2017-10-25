@@ -48,10 +48,10 @@ function createListItem(){
       appendEdit();
     };
     function hoverOver(){
-      itemDiv.classList.add('hover-class');
+      makeListDiv.classList.add('hover-class');
     };
     function hoverOut(){
-      itemDiv.classList.remove('hover-class');
+      makeListDiv.classList.remove('hover-class');
     };
     itemDiv.addEventListener('mouseout', hoverOut)
     itemDiv.addEventListener('mouseover', hoverOver);
@@ -108,33 +108,19 @@ moneyTheme.addEventListener('mouseover', hoverMoney);
 moneyTheme.addEventListener('mouseout', exitMoney);
 var getBody = document.getElementById('bodyTag').classList;
 function changeDefault(){
-  if(getBody.contains('halloween-theme', 'usa-theme', 'money-theme')){
-    getBody.remove('halloween-theme', 'usa-theme', 'money-theme');
-  };
+  getBody.remove('halloween-theme', 'usa-theme', 'money-theme');
 };
 function changeHalloween(){
-  if(getBody.contains('default-theme', 'usa-theme', 'money-theme')){
-    getBody.remove('default-theme', 'usa-theme', 'money-theme');
-    getBody.add('halloween-theme');
-  } else {
-    getBody.add('halloween-theme');
-  };
+  getBody.remove('default-theme', 'usa-theme', 'money-theme');
+  getBody.add('halloween-theme');
 };
 function changeUsa(){
-  if(getBody.contains('halloween-theme', 'default-theme', 'money-theme')){
     getBody.remove('halloween-theme', 'default-theme', 'money-theme');
     getBody.add('usa-theme');
-  } else {
-    getBody.add('usa-theme');
-  };
 };
 function changeMoney(){
-  if(getBody.contains('halloween-theme', 'usa-theme', 'default-theme')){
-    getBody.remove('halloween-theme', 'usa-theme', 'default-theme');
-    getBody.add('money-theme');
-  } else {
-    getBody.add('money-theme');
-  };
+  getBody.remove('halloween-theme', 'usa-theme', 'default-theme');
+  getBody.add('money-theme');
 };
 
 function hoverDefault(){

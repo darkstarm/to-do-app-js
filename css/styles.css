@@ -1,18 +1,33 @@
-.inputHalf{
-
-}
-
 .outputHalf {
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 5px;
 }
 
-.outputHolder {
+.list-title{
+  background-color: #f7a438;
+  border-bottom: 2px solid black;
+}
 
+.three-style{
+  border-bottom: 2px solid #000000;
+}
+
+.edit-style{
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  background-color: #53e3e8;
+}
+
+.delete-style{
+  background-color: #f74838;
+}
+
+.check-style{
+  background-color: #8ef738;
 }
 
 .listBorder{
-  border: 1px solid red;
+  border: 1px solid #000000;
 }
 
 .markItemDone {
@@ -20,7 +35,8 @@
 }
 
 .hover-class{
-  color: red;
+  background-color: #000000;
+  color: #ffffff;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -45,15 +61,24 @@
 }
 
 .halloween-theme{
-  background-color: orange;
+  background-image: url(../images/halloween.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .usa-theme{
-  background-color: red;
+  background-image: url(../images/american-flag.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .money-theme{
-  background-color: green;
+  background-image: url(../images/money.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .theme-menu{
@@ -73,14 +98,15 @@
 
 .api-img{
   margin: 10px;
-  border: 3px solid red;
+  border: 3px solid #000000;
   border-radius: 5px;
 }
 
 .api-holder{
-  border: 2px solid green;
+  border: 2px solid #000000;
   margin: 20px;
   border-radius: 5px;
+  background-color: #ffffff;
 }
 
 .space-api{
@@ -88,6 +114,14 @@
 }
 
 .theme-button-bg{
-  background-color: white;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.warn-red{
+  color: #ff0000;
+}
+
+.nav>li>a:focus, .nav>li>a:hover{
   border-radius: 5px;
 }

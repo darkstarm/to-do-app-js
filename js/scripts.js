@@ -89,9 +89,6 @@ function enterKeySubmit(enterKey){
 
 //End Submit Button
 
-<<<<<<< HEAD
-//Things left to do: Make it look nice/clean up CSS, add themes Dropdown, add Counters for lists and items created, add Enter key function to input, change mouse cursor on hover edit;
-=======
 //Start Themes function
 var defaultTheme = document.getElementById('defaultTheme');
 var halloweenTheme = document.getElementById('halloweenTheme');

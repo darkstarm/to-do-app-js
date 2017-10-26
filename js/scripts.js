@@ -25,6 +25,7 @@ function createListItem(){
     checkboxDiv.appendChild(makeCheckbox);
     makeListDiv.appendChild(checkboxDiv);
     function crossTextOut(){
+      makeListDiv.classList.toggle('markItemDone');
       itemDiv.classList.toggle('markItemDone');
     };
     makeCheckbox.addEventListener('click', crossTextOut);

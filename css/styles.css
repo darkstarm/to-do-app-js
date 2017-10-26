@@ -32,6 +32,8 @@
 
 .markItemDone {
   text-decoration: line-through;
+  color: #000000;
+  background-color: #ff0000;
 }
 
 .hover-class{

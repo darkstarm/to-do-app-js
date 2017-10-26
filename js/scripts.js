@@ -43,7 +43,7 @@ function createListItem(){
       var editedItem = prompt("Editing list item: "+inputValue, inputValue);
       function appendEdit(){
         console.log(typeof(editedItem));
-        if(editedItem == null || editedItem == ""){
+        if(!editedItem){
           return editItem();
         } else {
           textValue = document.createTextNode(editedItem);

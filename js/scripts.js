@@ -42,8 +42,12 @@ function createListItem(){
       var editedItem = prompt("Editing list item: "+inputValue, inputValue);
       itemDiv.removeChild(textValue);
       function appendEdit(){
-        textValue = document.createTextNode(editedItem);
-        itemDiv.appendChild(textValue);
+        if(!editItem){
+          return editItem();
+        } else {
+          textValue = document.createTextNode(editedItem);
+          itemDiv.appendChild(textValue);
+        };
       };
       appendEdit();
     };

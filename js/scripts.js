@@ -41,9 +41,9 @@ function createListItem(){
     makeListDiv.appendChild(itemDiv);
     function editItem(){
       var editedItem = prompt("Editing list item: "+inputValue, inputValue);
-      itemDiv.removeChild(textValue);
       function appendEdit(){
-        if(!editItem){
+        console.log(typeof(editedItem));
+        if(editedItem == null || editedItem == ""){
           return editItem();
         } else {
           textValue = document.createTextNode(editedItem);

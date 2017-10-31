@@ -1,5 +1,5 @@
 // List title function start
-var name = prompt('What is your name?', 'default name');
+var name = prompt('What is your name?', 'default name'); //I like this addition to the UI/UX -RJH
 function listTitle(){
   let grabList = document.getElementById('nameTitle');
   let addHead = document.createElement('h2');
@@ -19,7 +19,7 @@ function createListItem(){
   listItemHolder.appendChild(makeListDiv);
   var checkboxDiv = document.createElement('div');
   function createCheckBoxDiv(){
-    checkboxDiv.classList.add('col-sm-4');
+    checkboxDiv.classList.add('col-sm-4');//Is there a way you can separate out some of this logic into separate functions? This all works but the more you can separate your functions, the cleaner your code will be -RJH
     var makeCheckbox = document.createElement('input');
     makeCheckbox.type = 'checkbox';
     checkboxDiv.appendChild(makeCheckbox);
@@ -40,7 +40,7 @@ function createListItem(){
     itemDiv.appendChild(textValue);
     makeListDiv.appendChild(itemDiv);
     function editItem(){
-      var editedItem = prompt("Editing list item: "+inputValue, inputValue);
+      var editedItem = prompt("Editing list item: "+inputValue, inputValue); //NICE! -RJH
       function appendEdit(){
         console.log(typeof(editedItem));
         if(!editedItem){
@@ -53,7 +53,7 @@ function createListItem(){
       appendEdit();
     };
     function hoverOver(){
-      makeListDiv.classList.add('hover-class');
+      makeListDiv.classList.add('hover-class');//Nice job with separating the logic for hoverOver and hoverOut! -RJH
     };
     function hoverOut(){
       makeListDiv.classList.remove('hover-class');
@@ -73,7 +73,7 @@ function createListItem(){
     delButton.addEventListener('click', deleteFunc);
     var deleteItemDiv = makeListDiv;
     function deleteFunc(){
-      deleteItemDiv.parentNode.removeChild(makeListDiv);
+      deleteItemDiv.parentNode.removeChild(makeListDiv); //Excellent approach to removing from the DOM -RJH
     };
   };
   createDelDiv();
@@ -82,7 +82,7 @@ function createListItem(){
 var grabSubmit = document.getElementById('submitButton');
 grabSubmit.addEventListener('click',createListItem);
 userInput.addEventListener('keydown', enterKeySubmit);
-function enterKeySubmit(enterKey){
+function enterKeySubmit(enterKey){ //Good work! Your one of 3 who did this -RJH
   if(enterKey.keyCode === 13){
     if(userInput.value === ""){
       enterKey.preventDefault();
@@ -110,7 +110,7 @@ usaTheme.addEventListener('mouseover', hoverUsa);
 usaTheme.addEventListener('mouseout', exitUsa);
 moneyTheme.addEventListener('click', changeMoney);
 moneyTheme.addEventListener('mouseover', hoverMoney);
-moneyTheme.addEventListener('mouseout', exitMoney);
+moneyTheme.addEventListener('mouseout', exitMoney); //This is just above and beyond! great work man! -RJH
 var getBody = document.getElementById('bodyTag').classList;
 function changeDefault(){
   getBody.remove('halloween-theme', 'usa-theme', 'money-theme');
@@ -154,7 +154,7 @@ function exitMoney(){
 };
 //End Themes function
 // Query Api function Start
-var url = 'https://randomuser.me/api/?results=4'
+var url = 'https://randomuser.me/api/?results=4'//NIIIIIIIIIIIIICE! Extra points!! -RJH
 var apiDiv = document.getElementById('apiDiv');
 var userPhotoArray = [];
 var userNameArray = [];
@@ -192,3 +192,4 @@ grabApiInfo();
 
 // query api function end
 //Things left to do: Make it look nice/clean up CSS,fix null on cancel edit
+// Also, add some comments to separate your functions and document what they're doing :) -RJH
